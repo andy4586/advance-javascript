@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyBoard Check</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="project">
+        <div id="insert">
+            <div class="key">Press the Key and watch magic</div>
+        </div>
+    </div>
+<style>
+    table {
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    th, td {
+        border: 1px solid #fff;
+        padding: 10px 20px;
+        text-align: center;
+    }
+    th {
+        background: #333;
+    }
+</style>
+<script>
+    const insert = document.querySelector('#insert');
+    window.addEventListener('keydown', (e) => {
+        insert.innerHTML = `
+        <div class='color'>
+            <table>
+              <tr>
+                <th>Key</th>
+                <th>Key Code</th>
+                <th>Code</th>
+              </tr>
+              <tr>
+                <td>${e.key === ' ' ? 'Space' : e.key}</td>
+                <td>${e.keyCode || e.which}</td>
+                <td>${e.code}</td>
+              </tr>
+            </table>
+        </div>
+        `;
+    });
+</script>
+</body>
+
+</html>
