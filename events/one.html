@@ -1,11 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>html elements</title>
 </head>
-<body>
-    
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="ps.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="japan.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="river.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="owl.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="prayer.jpg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://www.google.com/" id="google">Google</a></li>
+        </ul>
+    </div>
 </body>
+<script>
+    // Document.getElementById('owl').onclick = function() {
+    //     alert('Owl clicked!');
+    // };
+
+    // document.getElementById('owl').addEventListener('click', function(e) {
+    //     console.log(e);
+    //     e.preventDefault(); // Prevent default action if it's a link
+    //     alert('Owl clicked!');
+    // }, false);
+    // type, timestamp, toelement, screenX, screenY, altKey, ctrlkey, keyCode, clientX,
+    //  clientY, srcElement, target, currentTarget, eventPhase, bubbles, cancelable, 
+    // defaultPrevented, composed
+
+    // document.getElementById('images').addEventListener('click', function (e) {
+    //     console.log("clicked on images list");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function (e) {
+    //     console.log("owl clicked");
+    // }, false)
+
+    // document.getElementById('google').addEventListener('click', function (e){
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log("google clicked");
+    // }, true)
+
+    document.querySelector('#images').addEventListener('click', function (e) {
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeit = e.target.parentNode
+            removeit.remove();
+        }
+        // if(e.target.tagName !== 'IMG') {
+        //     return; // If the clicked element is not an image, do nothing
+        // }
+
+        // removeit.parentNode.removeChild(removeit);  // Alternative way to remove an element
+
+        // e.target.remove(); // This will remove the clicked image
+
+
+    }, false);
+
+</script>
+
 </html>
